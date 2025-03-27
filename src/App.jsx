@@ -7,9 +7,12 @@ function MyButton() {
 
   return (
     <>
-      <p>Clicked {count} times</p>
+      <p>Clicked {count}</p>
       <button type="button" onClick={() => setCount(count + 1)}>
-        Click
+        Click +
+      </button>
+      <button type="button" onClick={() => setCount(count - 1)}>
+        Click -
       </button>
     </>
   );
