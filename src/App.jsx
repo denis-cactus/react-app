@@ -1,5 +1,19 @@
 import "./App.css";
 import { BookList } from "./components/BookList.jsx";
+import { useState } from "react";
+
+function MyButton() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <p>Clicked {count} times</p>
+      <button type="button" onClick={() => setCount(count + 1)}>
+        Click
+      </button>
+    </>
+  );
+}
 
 const favBooks = [
   { id: "id-1", name: "JS for beginners" },
@@ -15,6 +29,7 @@ export default function MyApp() {
     <div>
       <h1>Books of the week</h1>
       <BookList books={favBooks} />
+      <MyButton />
     </div>
   );
 }
