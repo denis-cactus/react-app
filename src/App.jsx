@@ -1,38 +1,20 @@
 import "./App.css";
-import { BookList } from "./components/BookList.jsx";
-import { useState } from "react";
+import { UserList } from "./components/UserList.jsx";
 
-function MyButton() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <>
-      <p>Clicked {count}</p>
-      <button type="button" onClick={() => setCount(count + 1)}>
-        Click +
-      </button>
-      <button type="button" onClick={() => setCount(count - 1)}>
-        Click -
-      </button>
-    </>
-  );
-}
-
-const favBooks = [
-  { id: "id-1", name: "JS for beginners" },
-  { id: "id-2", name: "React basics" },
+const users = [
+  { id: 1, name: "Іван", email: "ivan@email.com", phone: "123-456-789" },
   {
-    id: "id-3",
-    name: "React Router overview",
+    id: 2,
+    name: "Марія",
+    email: "maria@email.com",
+    phone: "987-654-321",
   },
+  { id: 3, name: "Петро", email: "petro@email.com", phone: "555-666-777" },
 ];
-
 export default function MyApp() {
   return (
     <div>
-      <h1>Books of the week</h1>
-      <BookList books={favBooks} />
-      <MyButton />
+      <UserList users={users} />
     </div>
   );
 }
